@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import ProfileButton from "./profile-button";
 import { connect } from "react-redux";
-import Logo from "./util/images/ASEE_LOGO.png";
+import Logo from "./util/images/small_logo.png";
 import { Link as RouterLink } from "react-router-dom";
 import NotificationButton from "./notification-button";
 import { translate } from "./util/lang/translate-wrapper";
@@ -62,8 +62,9 @@ const AppbarContents = props => {
     return (
       <Fragment>
         <img
+          style={{marginBottom:"-0.5rem"}}
           alt="logo"
-          width="250"
+          width="62"
           height="62"
           className="flag"
           src={Logo}
@@ -106,7 +107,7 @@ const AppbarContents = props => {
 
 const mapStateToProps = (state) => ({
   header: "header", //state.header,
-  fullName: state.oidc.user.profile.name,
+  fullName: state.oidc.user?.profile?.name,
 });
 const mapDispatchToProps = (dispatch) => {
   return {

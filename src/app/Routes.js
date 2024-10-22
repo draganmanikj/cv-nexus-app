@@ -73,7 +73,7 @@ export default function Routes(props) {
           exact
           path="/"
           element={
-            <AuthorizedRoute
+            <PublicRoute
               component={DashboardContainer}
               layout={Layout}
             />

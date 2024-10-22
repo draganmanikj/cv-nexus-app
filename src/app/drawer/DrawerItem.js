@@ -26,7 +26,7 @@ function DrawerItem(props) {
       paddingTop: "3px",
       paddingBottom: "3px",
       "&.Mui-selected": {
-        backgroundColor: "#b357c2" //drawer item
+        backgroundColor: '#0071e3' //drawer item
       }
     },
     listItemText: {

@@ -25,7 +25,7 @@ const customStyles = (theme) => ({
   },
   appBar: {
     zIndex: theme.zIndex.modal,
-    background: "linear-gradient(240deg, #0090e0 0%, #007ee0 70%, #006be0 100%);", //app-bar 
+    background: "linear-gradient(240deg, #313131 0%, #3e3e3e  70%, #585858 100%);", //app-bar 
   },
   drawer: {
     width: drawerWidth,
@@ -34,7 +34,7 @@ const customStyles = (theme) => ({
       width: drawerWidth
     },
     "& .MuiPaper-root":{
-      background: "linear-gradient(240deg, #0090e0 0%, #007ee0 70%, #006be0 100%);", //drawer
+      background: "linear-gradient(240deg, #313131 0%, #3e3e3e  70%, #585858 100%);", //drawer
       color: "white",
       top: "64px",
       maxHeight: "calc(100vh - 64px)",

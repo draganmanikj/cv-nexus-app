@@ -22,14 +22,6 @@ const App = (props) => {
             <>
               <Routes history={history}/>
               <SrollToTopButton />
-              {/* <AuthorizationLoader/> dokolku ima user-management  */}
-              <VersionInfo>
-                <VersionInfoItem title={"app"} infoUrl={`${properties.urlRoot}/info.json`} />
-                <VersionInfoItem
-                  title={"api"}
-                  infoUrl={`${properties.api.root}/actuator/info`}
-                />
-              </VersionInfo>
             </>
           </OidcProvider>
         </LocalizationProvider>

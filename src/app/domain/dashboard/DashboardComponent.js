@@ -9,7 +9,7 @@ import {
   OPERATORI,
   AUDIT,
 } from "../../util/userRoleConstants";
-import AssecoLogo from "../../util/images/ASEE_LOGO.png"
+import Logo from "../../util/images/logo.png"
 import { useTheme } from "@emotion/react";
 
 export default function DashboardComponent({
@@ -43,8 +43,8 @@ export default function DashboardComponent({
     boxImgBg: {
       backgroundClip: "padding-box !important",
       background: theme.palette.mode === "light" ? 
-      `linear-gradient(0deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url(${AssecoLogo})`: 
-      `linear-gradient(0deg, rgba(18, 18, 18, 0.60), rgba(18, 18, 18, 0.60)), url(${AssecoLogo})`,
+      `linear-gradient(0deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url(${Logo})`: 
+      `linear-gradient(0deg, rgba(18, 18, 18, 0.60), rgba(18, 18, 18, 0.60)), url(${Logo})`,
       minHeight: "calc(100vh - 150px)",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",

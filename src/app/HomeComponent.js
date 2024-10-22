@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./util/images/logo-asseco.png";
+import Logo from "./util/images/logo.png";
 import { translate } from "./util/lang/translate-wrapper";
 
 function Home(props) {

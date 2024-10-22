@@ -1,6 +1,6 @@
 export const domainMessages_mk = {
   app: {
-    applicationName: "АСЕЕ апликација",
+    applicationName: "CV Nexus",
     domain: "Example domain",
     version: "v 0.0",
     title: "Пример",

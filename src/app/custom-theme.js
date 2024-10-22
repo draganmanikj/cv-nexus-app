@@ -4,10 +4,10 @@ function customTheme () {
     let theme = createTheme({
         palette: {
             primary: {
-                main: '#cc8fd6',
+                main: '#0071e3',
             },
             secondary: {
-                main: '#00a3e0',
+                main: '#cdbdb0',
             },
         },
     });

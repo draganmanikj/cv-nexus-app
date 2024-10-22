@@ -13,7 +13,7 @@ const customStyles = (theme) => ({
     },
     "& .MuiList-root": {
       background:
-        "linear-gradient(240deg, #0090e0 0%, #007ee0 70%, #006be0 100%);", //language
+        "linear-gradient(240deg, #313131 0%, #3e3e3e  70%, #585858 100%)", //language
       color: "white",
     },
   },
@@ -70,9 +70,9 @@ function LanguageSelector() {
       >
         <MenuItem
           sx={{
-            backgroundColor: languageValue === "mk" ? "#b357c2" : "initial",
+            backgroundColor: languageValue === "mk" ? '#0071e3' : "initial",
             "&:hover" :{
-              backgroundColor: "#b357c2"
+              backgroundColor: '#0071e3'
             }
           }}
           value="mk"
@@ -94,9 +94,9 @@ function LanguageSelector() {
         </MenuItem> */}
         <MenuItem
           sx={{
-            backgroundColor: languageValue === "en" ? "#b357c2" : "initial",
+            backgroundColor: languageValue === "en" ? '#0071e3' : "initial",
             "&:hover" :{
-              backgroundColor: "#b357c2"
+              backgroundColor: '#0071e3'
             }
           }}
           value="en"
