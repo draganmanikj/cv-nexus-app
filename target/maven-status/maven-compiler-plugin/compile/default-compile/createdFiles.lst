@@ -1,0 +1,4 @@
+com\asseco\frontendcontainer\SomeController.class
+com\asseco\frontendcontainer\WebConfiguration.class
+com\asseco\frontendcontainer\FrontendContainerApplication.class
+com\asseco\frontendcontainer\ServletInitializer.class

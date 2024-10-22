@@ -1,0 +1,5 @@
+export default {
+
+    CLEAR_ALL_NOTIFICATIONS: "CLEAR_ALL_NOTIFICATIONS",
+
+}
