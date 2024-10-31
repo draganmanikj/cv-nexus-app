@@ -64,6 +64,7 @@ export default function DrawerTreeList() {
   return (
     <List sx={classes.list}>
       <DrawerItem to="/" name="pochetna" pathname="/" icon={<HomeIcon />} />
+      <DrawerItem to="/moedosie" name="moedosie" pathname="/moedosie" icon={<HomeIcon />} />
       
       {/* <HasAuth any={[SUPERADMIN, OPERATORI]}>
         <DrawerItem

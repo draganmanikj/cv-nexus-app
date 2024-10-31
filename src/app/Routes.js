@@ -14,7 +14,7 @@ import { Error404Page, ErrorPage } from "asseco-commons";
 import Home from "./HomeComponent";
 import { HistoryRouter as Router } from "redux-first-history/rr6";
 import DashboardContainer from "./domain/dashboard/DashboardContainer";
-// import { SUPERADMIN, OPERATORI, KORISNICI } from "./util/userRoleConstants";
+import DosieContainer from "./domain/dosie/DosieContainer"
 
 export default function Routes(props) {
   const { history } = props;
@@ -75,6 +75,16 @@ export default function Routes(props) {
           element={
             <PublicRoute
               component={DashboardContainer}
+              layout={Layout}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/moedosie"
+          element={
+            <PublicRoute
+              component={DosieContainer}
               layout={Layout}
             />
           }
