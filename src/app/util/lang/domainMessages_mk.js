@@ -143,6 +143,7 @@ export const domainMessages_mk = {
 
     drawer: {
       pochetna: "Почетна страница",
+      moedosie: "Мое досие",
     },
     notifications: {
       errorRequired: "Полето е задолжително",

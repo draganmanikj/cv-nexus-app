@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { List, useTheme } from "@mui/material";
 import DrawerItem from "./DrawerItem";
 import HomeIcon from "@mui/icons-material/Home";
-// import { KORISNICI, SUPERADMIN, OPERATORI } from "../util/userRoleConstants";
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 
 const customStyles = (theme) => ({
   list: {
@@ -64,7 +64,7 @@ export default function DrawerTreeList() {
   return (
     <List sx={classes.list}>
       <DrawerItem to="/" name="pochetna" pathname="/" icon={<HomeIcon />} />
-      <DrawerItem to="/moedosie" name="moedosie" pathname="/moedosie" icon={<HomeIcon />} />
+      <DrawerItem to="/moedosie" name="moedosie" pathname="/moedosie" icon={<AssignmentIndIcon />} />
       
       {/* <HasAuth any={[SUPERADMIN, OPERATORI]}>
         <DrawerItem

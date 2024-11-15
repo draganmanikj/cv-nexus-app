@@ -83,7 +83,7 @@ export default function Routes(props) {
           exact
           path="/moedosie"
           element={
-            <PublicRoute
+            <AuthorizedRoute
               component={DosieContainer}
               layout={Layout}
             />

@@ -11,7 +11,7 @@ export const properties = {
     oidcLogoutRedirect: getUrlRoot(),
     oidcRedirectUrl: concatenateUrlPaths(getUrlRoot(),`callback`),
     oidcAuthority: process.env.REACT_APP_AUTHORITY, // configure keycloak
-    oidcClientId: 'arhiva-dms-app',
+    oidcClientId: 'cv-nexus-app',
     oidcQueryParams: {"ui_locales":"mk"},
     // umAuthUrl: "/um/auth",
     oidcScope: 'openid profile',
@@ -21,11 +21,13 @@ export const properties = {
     },
     app: {
         publicUrl: process.env.REACT_APP_PUBLIC_URL,
+        keycloakAuthConsole: process.env.REACT_APP_KEYCLOACK_AUTH,
     },
     auth: {
         mock: false
     },
     maxInactivityTime: 900000,
     checkGroupMatch: true,
-    disabledFieldOpacity: 0.65
+    disabledFieldOpacity: 0.65,
+    groupName: "cv-nexus-app"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "template-app",
+  "name": "cv-nexus-app",
   "private": true,
   "dependencies": {
     "@date-io/jalaali": "^2.16.1",

@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.asseco</groupId>
-	<artifactId>template-app</artifactId>
+	<artifactId>cv-nexus-app</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 	<name>Frontend Container</name>
