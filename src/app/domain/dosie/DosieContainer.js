@@ -18,7 +18,6 @@ export default function DosieContainer() {
   const isOwnDosie = window.location.href?.includes("moedosie");
   const isEmployee = window.location.href?.includes("vraboteni");
   const [isDosie, setIsDosie] = useState()
-
   useEffect(() => {
     if (isEmployee) { // stranica vraboteni
       dispatch(actions.getDosieByUserSuccess());

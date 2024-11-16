@@ -13,8 +13,7 @@ export default function LockScreenDialog(props) {
       <DialogContent
         sx={{ 
           color: "white",
-          background:
-          "linear-gradient(240deg, #0090e0 0%, #007ee0 70%, #006be0 100%);"
+          background:"#3e3e3e"
         }}>
         <LoadingComponent />
       </DialogContent>

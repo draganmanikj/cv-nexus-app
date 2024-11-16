@@ -32,7 +32,7 @@ function DocumentsComponent(props) {
   const [selectedRow, setSelectedRow] = useState();
   const [openAlertDialog, setOpenAlertDialog] = useState(false);
   const documentTypes = useSelector(
-    (state) => state.documentTypes.documentTypes
+    (state) => state?.documentTypes?.documentTypes
   );
   const username = useSelector(
     (state) => state.oidc.user?.profile.preferred_username

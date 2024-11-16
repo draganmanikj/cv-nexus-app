@@ -5,15 +5,9 @@ import { translate } from "../lang/translate-wrapper";
 
 const makeStyles = theme => ({
   customStyles: {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "#3e3e3e" ,
     color: "white"
   },
-  yesBtnStyles: {
-    backgroundColor: theme.palette.secondary.main,
-  },
-  noBtnStyles: {
-    backgroundColor: theme.palette.primary.main,
-  }
 })
 
 
@@ -42,11 +36,10 @@ export default function AlertDialog(props) {
                 color="primary"
                 variant="contained"
                 autoFocus
-                sx={styles.yesBtnStyles}
               >
                 {translate("app.generic.yes").toUpperCase()}
               </Button>
-              <Button onClick={props.onClose} variant="contained" sx={styles.noBtnStyles}>
+              <Button onClick={props.onClose} variant="contained" color="secondary" >
                 {translate("app.generic.no").toUpperCase()}
               </Button>
         </DialogActions>

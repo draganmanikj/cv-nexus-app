@@ -7,7 +7,7 @@ const getColorOptions = (mode,fontSize) => ({
     palette: {
         mode:mode,
         primary: {
-            main: mode === "dark" ? "#cc8fd6" : "#b6a268",
+            main: mode === "dark" ? "#0071e3" : "#0071e3",
             contrastText: "white",
           },
           secondary: {

@@ -83,10 +83,11 @@ function LinkTab(props) {
 const useStyles = makeStyles ((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    "& .css-1ujykiq-MuiButtonBase-root-MuiTab-root.Mui-selected":{
-      color:"white",
-      borderBottom:"5px solid white"
+    backgroundColor: theme.palette.background.primary,
+    "& .css-yoikli-MuiButtonBase-root-MuiTab-root.Mui-selected":{
+      color:"#0093fd !important",
+      borderBottom:"5px solid #0093fd !important",
+      borderRadius: '5px'
     }
   },
 
@@ -151,10 +152,6 @@ const classes = useStyles();
 
   const initialValues = {};
 
-  useEffect(() => {
-    username && dispatch(operations.fetchUserVacationDays(username))
-      .then(res => {setVacationDays(res)})
-  }, [username])
 
   useEffect(() => {
     if ( isOwnDosie) { // stranica moedosie
@@ -192,10 +189,10 @@ const classes = useStyles();
       top: card_ref.current.offsetTop,
     });
   }
-
+  
   return (
-      <>  
-      {oidc.isLoadingUser === false && !props.singleDosie && (
+      <>
+      {!props.singleDosie && (
         <>
           <Grid item xs={12}>
             <Formik
@@ -372,23 +369,21 @@ const classes = useStyles();
           </Grid>
         </Grid>}
         
+
         {(props.userDosie || isAddDosie) && <Card
           ref={card_ref}
         >
           <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar position="static" style={{background: "linear-gradient(240deg, #313131 0%, #3e3e3e  70%, #585858 100%)"}}>
               <Tabs
                 variant="fullWidth"
                 value={tab}
                 onChange={handleChange}
                 aria-label="nav tabs example"
               >
-                <LinkTab label="Евиденција" {...a11yProps(0)} style={{ fontWeight: 'bold' }}/>
-                <LinkTab label="Документација" {...a11yProps(1)} style={{ fontWeight: 'bold' }}/>
-                <LinkTab label="Отсуства" {...a11yProps(2)} style={{ fontWeight: 'bold' }}/>
-                <LinkTab label="Боледување" {...a11yProps(3)} style={{ fontWeight: 'bold' }}/>
-                <LinkTab label="Друго" {...a11yProps(4)} style={{ fontWeight: 'bold' }}/>
-                {isAdmin && <LinkTab label="Излезно интервју" {...a11yProps(5)} style={{ fontWeight: 'bold' }}/> }
+                <LinkTab label="Профил" {...a11yProps(0)} style={{ fontWeight: 'bold', color:'white'}}/>
+                <LinkTab label="Документација" {...a11yProps(1)} style={{ fontWeight: 'bold', color:'white'}}/>
+                <LinkTab label="Едукација" {...a11yProps(2)} style={{ fontWeight: 'bold', color: 'white' }}/>
               </Tabs>
             </AppBar>
             <TabPanel value={tab} index={0}>
@@ -406,7 +401,7 @@ const classes = useStyles();
                 loading={loading} 
               />
             </TabPanel>
-            <TabPanel value={tab} index={4}>
+            <TabPanel value={tab} index={2}>
               <Grid item container xs={11} style={{margin: '0 auto', padding: '1rem'}}>
                 <OtherComponent selectedUser={selectedUser}/>
               </Grid>

@@ -8,9 +8,6 @@ import {
   getFilterUsers,
   getDosiesNotInTypeReqId,
   getDosiesForTypeRequest,
-  workFlow,
-  workFlowId,
-  requestDetails
 } from "../../../api/dosieApi";
 
 const fetchDosie = () => {
@@ -27,34 +24,7 @@ const fetchDosie = () => {
       });
   };
 };
-const fetchAllDosieRequests = () => {
-  return (dispatch, getState) => {
-    dispatch(actions.getRequestsRequest());
-    return requestDetails()
-      .then((returnedItem) => {
-        dispatch(actions.getRequestsSuccess(returnedItem));
-        return Promise.resolve(returnedItem);
-      })
-      .catch((error) => {
-        dispatch(actions.getRequestsFail(error));
-        Promise.resolve(error);
-      });
-  };
-};
-const fetchUserVacationDays = (username) => {
-  return (dispatch, getState) => {
-    dispatch(actions.getVacationDaysRequest());
-    return workFlowId(username)
-      .then((returnedItem) => {
-        dispatch(actions.getVacationDaysSuccess(returnedItem));
-        return Promise.resolve(returnedItem);
-      })
-      .catch((error) => {
-        dispatch(actions.getVacationDaysFail(error));
-        Promise.resolve(error);
-      });
-  };
-};
+
 
 const createDosie = (dosie) => {
   return (dispatch) => {
@@ -188,6 +158,4 @@ export default {
   fetchFilteredUsers,
   fetchDosiesNotInTypeReqId,
   fetchDosiesForTypeRequest,
-  fetchAllDosieRequests,
-  fetchUserVacationDays,
 };

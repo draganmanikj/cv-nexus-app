@@ -42,13 +42,18 @@ export default function DashboardComponent({
     },
     boxImgBg: {
       backgroundClip: "padding-box !important",
-      background: theme.palette.mode === "light" ? 
-      `linear-gradient(0deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url(${Logo})`: 
-      `linear-gradient(0deg, rgba(18, 18, 18, 0.60), rgba(18, 18, 18, 0.60)), url(${Logo})`,
-      minHeight: "calc(100vh - 150px)",
+      background: theme.palette.mode === "light" 
+        ? `linear-gradient(0deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url(${Logo})`
+        : `linear-gradient(0deg, rgba(18, 18, 18, 0.60), rgba(18, 18, 18, 0.60)), url(${Logo})`,
+      minHeight: "90vh",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
-      // backgroundSize: "cover",
+      backgroundSize: "contain", 
+      display: "flex", 
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "10px", 
     },
     root: {
       "& .MuiPaper-root":{

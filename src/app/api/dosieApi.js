@@ -98,17 +98,4 @@ export const requestDetails = (id) => {
   }).then((response) => Promise.resolve(response));
 };
 
-// export const workFlowId = (id) => { //fetchUserVacationDays in DosieContainer
-//   return httprequest({
-//     headers: headers,
-//     url: `${properties.api.root}/request/user/${id}`,
-//     method: "GET",
-//   }).then((response) => {return Promise.resolve(response)});
-// };
-export const workFlowId = (username) => { //fetchUserVacationDays in DosieContainer
-  return httprequest({
-    headers: headers,
-    url: `${properties.api.root}/request/user/byUsername/${username}`,
-    method: "GET",
-  }).then((response) => {return Promise.resolve(response)});
-};
+

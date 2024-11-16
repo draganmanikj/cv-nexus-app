@@ -232,13 +232,13 @@ export default function DosiePersonalInfoComponent(props) {
                 />
               </Grid>
               <Grid item xs={6}>
-                <div style={{border:"1px solid lightgrey", borderBottom:"1px solid lightgrey", borderRadius:"5px", width:"100%"}}>
+                <div >
                   <Field
                     name="dateBirth"
                     label={translate("app.dosie.dosiePersonalInfoForm.dateBirth")}
                     component={FDatePicker}
                     format={"DD.MM.YYYY"}
-                    margin="none"
+                    renderInputVariant="outlined"
                   />
                 </div>
               </Grid>

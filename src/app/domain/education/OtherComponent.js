@@ -97,7 +97,6 @@ const AccordionSummary = withStyles({
 })(MuiAccordionSummary);
 
 const OtherComponent = (props) => {
-
     const dispatch = useDispatch();
     const { education, loading, dosie, trainings, projects } = useSelector((state) => ({
         education: state.education.education,

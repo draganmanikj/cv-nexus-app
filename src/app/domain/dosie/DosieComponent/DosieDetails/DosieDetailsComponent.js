@@ -93,12 +93,9 @@ const AccordionSummary = withStyles({
 const DosieDetailsComponent = (props) => {
 
     const theme = useTheme();
-const classes = useStyles();
+    const classes = useStyles();
     const {userDosie} = useSelector((state) => ({
         userDosie: state.dosie.userDosie,
-    }));
-    const {family} = useSelector((state) => ({
-        family: state.family.families
     }));
     const [expanded, setExpanded] = useState("panel1");
     const handleChange = (panel) => (event, newExpanded) => {
@@ -179,27 +176,7 @@ const classes = useStyles();
                     </Box>
                 </AccordionDetails>
             </Accordion>
-            <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}
-            style={{ ...(expanded === "panel2" && {border:"2px solid #00a3e0", borderRadius:"5px"})}}>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel2a-content"
-                    id="panel2a-header"
-                >
-                    <Typography className={classes.heading}>Службени податоци на вработениот</Typography>
-                    <Typography className={classes.secondaryHeading}>Број на вработен, Датум на вработување, Работна позиција и историјат</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <Box className={classes.body}>
-                        <DosieWorkInfoComponent
-                            save={props.save}
-                            dosie={userDosie}
-                            isAddDosie={props.isAddDosie}
-                            setIsAddDosie={props.setIsAddDosie}
-                        />
-                    </Box>
-                </AccordionDetails>
-            </Accordion>
+            
             
             
 

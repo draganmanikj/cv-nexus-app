@@ -7,7 +7,7 @@ function customTheme () {
                 main: '#0071e3',
             },
             secondary: {
-                main: '#cdbdb0',
+                main: '#3a3a3a',
             },
         },
     });
