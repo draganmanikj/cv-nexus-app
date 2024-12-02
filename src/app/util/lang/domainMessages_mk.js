@@ -29,6 +29,10 @@
       degree:"Степен на едукација",
       areatype:"Тип на област",
       languages:"Јазици",
+      output_documents:"Излезни документи",
+      outputDocumentType:"Тип на излезен документ",
+      searchDocuments:"Пребарување и менаџирање со излезни документи",
+      korisnici:"Корисници",
     },
       dashboard: {
         welcome:"Добредојдовте на CV Nexus",

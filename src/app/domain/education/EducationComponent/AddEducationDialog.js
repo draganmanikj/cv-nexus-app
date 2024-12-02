@@ -127,7 +127,7 @@ const classes = useStyles();
         dateEnd: Yup.date()
             .test("dateEndGreatedThenDateStart", (translate("app.dosie.other.trainingsForm.unvalidDate")), function(value){
                 const {dateStart} = this.parent;
-                if(value === undefined)
+                if(value === undefined || !value)
                     return true;
                 return new Date(value) > new Date(dateStart)
             })

@@ -18,6 +18,7 @@ import universityReducer from "../app/domain/universities/duck/reducers"
 import degreeEducationReducer from "../app/domain/degreeEducation/duck/reducers"
 import typeAreaReducer from "../app/domain/typeArea/duck/reducers.js"
 import languagesTypesReducer from "../app/domain/languages/duck/reducers.js"
+import outputDocumentsPrintReducer from "../app/domain/output_documents_printing/duck/reducers";
 
 const rootReducer = (routerReducer) => {
   return combineReducers({
@@ -43,6 +44,7 @@ const rootReducer = (routerReducer) => {
     degreeEducationReducer: degreeEducationReducer,
     typeAreaReducer: typeAreaReducer,
     languagesTypes: languagesTypesReducer,
+    outputDocumentsPrint: outputDocumentsPrintReducer,
 
   });
 };

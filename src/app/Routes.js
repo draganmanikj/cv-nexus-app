@@ -24,6 +24,7 @@ import Universities from "./domain/universities/UniversityComponent"
 import DegreeEducation from "./domain/degreeEducation/DegreeEducationComponent"
 import TypeAreaComponent from "./domain/typeArea/TypeAreaComponent"
 import LanguagesComponent from "./domain/languages/LanguagesTypeComponent"
+import OutputDocument from "./domain/output_documents_printing/OutputDocumentsPrintingContainer"
 
 export default function Routes(props) {
   const { history } = props;
@@ -91,6 +92,16 @@ export default function Routes(props) {
         <Route
           exact
           path="/moedosie"
+          element={
+            <AuthorizedRoute
+              component={DosieContainer}
+              layout={Layout}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/korisnici"
           element={
             <AuthorizedRoute
               component={DosieContainer}
@@ -188,6 +199,16 @@ export default function Routes(props) {
           element={
             <AuthorizedRoute
               component={LanguagesComponent}
+              layout={Layout}
+            />
+          }
+        />
+         <Route
+          exact
+          path="/output_documents"
+          element={
+            <AuthorizedRoute
+              component={OutputDocument}
               layout={Layout}
             />
           }

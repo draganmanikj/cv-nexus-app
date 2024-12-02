@@ -16,10 +16,10 @@ export default function DosieContainer() {
   const adminGroup = "admins";
   const isAdmin = userGroups?.includes(adminGroup);
   const isOwnDosie = window.location.href?.includes("moedosie");
-  const isEmployee = window.location.href?.includes("vraboteni");
+  const isEmployee = window.location.href?.includes("korisnici");
   const [isDosie, setIsDosie] = useState()
   useEffect(() => {
-    if (isEmployee) { // stranica vraboteni
+    if (isEmployee) { 
       dispatch(actions.getDosieByUserSuccess());
       dispatch(actions.getFilteredUsersSuccess([]));
     }

@@ -224,14 +224,6 @@ const classes = useStyles();
                     />
                     <CardContent>
                       <Grid container spacing={1} key={rerenderdosie} style={{alignItems:"center"}}>
-                        <Grid item xs={3} >
-                          <Field
-                            name="position_no"
-                            label={translate("app.dosie.positionBroj")}
-                            component={FTextField}
-                            margin="none"
-                          />
-                        </Grid>
                         <Grid item xs={3}>
                           <Field
                             name="user.name"
@@ -264,35 +256,7 @@ const classes = useStyles();
                             margin="none"
                           />
                         </Grid>
-                        <Grid item xs={3}>
-                          <Field
-                            name="applicationRole.name"
-                            placeholder={translate("app.dosie.sektor")}
-                            label={formikProps.values?.applicationRole?.name ? translate("app.dosie.sektor") : ""}
-                            component={FAutocomplete}
-                            getOptionValue={(option) => option.name}
-                            getOptionLabel={(option) => option.name}
-                            loadOnNoOptions={true}
-                            async={{
-                              url: `${properties.api.root}/roles/search`,
-                              method: "get",
-                              minChar: 2,
-                            }}
-                            margin="none"
-                          />
-                        </Grid>
-                        <Grid item xs={3} >
-                          <Field
-                            name="status"
-                            placeholder={translate("app.dosie.status")}
-                            label={formikProps.values?.status ? translate("app.dosie.status") : ""}
-                            component={FAutocomplete}
-                            options={statusOptions}
-                            getOptionValue={(option) => option.id}
-                            getOptionLabel={(option) => option.label}
-                            margin="none"
-                          />
-                        </Grid>
+                        
                       </Grid>
                     </CardContent>
                     <CardActions className={classes.flexEnd}>
@@ -344,7 +308,7 @@ const classes = useStyles();
               )}
             </Formik>
           </Grid>
-          {props.loading && location.pathname.includes("vraboteni") && <LockScreenDialog open={props.loading} id={"rolesLockScreenDialog"} />}
+          {props.loading && location.pathname.includes("korisnici") && <LockScreenDialog open={props.loading} id={"rolesLockScreenDialog"} />}
           {users !== undefined && users.length !== 0 && (
             <Card style={{border:"2px solid #00a3e0", borderRadius:"5px", marginTop:"1rem"}}>
               <UsersTable

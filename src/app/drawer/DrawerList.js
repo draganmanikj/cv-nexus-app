@@ -16,6 +16,8 @@ import AssuredWorkloadIcon from '@mui/icons-material/AssuredWorkload';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import PersonIcon from '@mui/icons-material/Person';
 import LanguageIcon from '@mui/icons-material/Language';
+import PrintIcon from '@mui/icons-material/Print';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 const customStyles = (theme) => ({
   list: {
@@ -86,6 +88,12 @@ export default function DrawerTreeList() {
         pathname="/moedosie"
         icon={<AssignmentIndIcon />}
       />
+      <DrawerItem
+        to="/korisnici"
+        name="korisnici"
+        pathname="/korisnici"
+        icon={<PeopleAltIcon />}
+      />
       <DrawerFolder name="configuration" icon={<AdminPanelSettingsIcon />} >
         <DrawerItem
           to="/workingPositionTypes"
@@ -140,6 +148,12 @@ export default function DrawerTreeList() {
           name="languages"
           pathname="/languages"
           icon={<LanguageIcon />}
+        />
+        <DrawerItem
+          to="/output_documents"
+          name="output_documents"
+          pathname="/output_documents"
+          icon={<PrintIcon />}
         />
       </DrawerFolder>
 
