@@ -1,5 +1,5 @@
 // import React, { useState, useEffect } from "react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { translate } from "../../../../../util/lang/translate-wrapper";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -26,12 +26,15 @@ export default function WorkingPositionsComponent(props) {
   const { workingPositions } = useSelector((state) => state.dosie);
   const [status, setStatus] = useState();
 
-  // useEffect(() => {
-  //   // if (props.dosie)
-  //   //   dispatch(operations.fetchWorkingPositionsById(props.dosie.id));
-
-  //     (!workingPositions && props.dosie?.id) &&  dispatch(operations.fetchWorkingPositionsById(props.dosie.id))
-  // }, [props.dosie]);
+  useEffect(() => {
+    if (props.dosie)
+      dispatch(operations.fetchWorkingPositionsById(props.dosie.id));
+    else {
+      !workingPositions &&
+        props.dosie?.id &&
+        dispatch(operations.fetchWorkingPositionsById(props.dosie.id));
+    }
+  }, [props.dosie]);
 
   function openDialog(dialog, row) {
     if (dialog === "add") {

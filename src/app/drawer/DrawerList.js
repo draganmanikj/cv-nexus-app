@@ -5,6 +5,17 @@ import { List, useTheme } from "@mui/material";
 import DrawerItem from "./DrawerItem";
 import HomeIcon from "@mui/icons-material/Home";
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import DrawerFolder from "./DrawerFolder"
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import WorkIcon from '@mui/icons-material/Work';
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import PublicIcon from '@mui/icons-material/Public';
+import SchoolIcon from '@mui/icons-material/School';
+import AssuredWorkloadIcon from '@mui/icons-material/AssuredWorkload';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import PersonIcon from '@mui/icons-material/Person';
+import LanguageIcon from '@mui/icons-material/Language';
 
 const customStyles = (theme) => ({
   list: {
@@ -63,9 +74,75 @@ export default function DrawerTreeList() {
 
   return (
     <List sx={classes.list}>
-      <DrawerItem to="/" name="pochetna" pathname="/" icon={<HomeIcon />} />
-      <DrawerItem to="/moedosie" name="moedosie" pathname="/moedosie" icon={<AssignmentIndIcon />} />
-      
+      <DrawerItem
+        to="/"
+        name="pochetna"
+        pathname="/"
+        icon={<HomeIcon />}
+      />
+      <DrawerItem
+        to="/moedosie"
+        name="moedosie"
+        pathname="/moedosie"
+        icon={<AssignmentIndIcon />}
+      />
+      <DrawerFolder name="configuration" icon={<AdminPanelSettingsIcon />} >
+        <DrawerItem
+          to="/workingPositionTypes"
+          name="workingPositionTypes"
+          pathname="/workingPositionTypes"
+          icon={<WorkIcon />}
+        />
+        <DrawerItem
+          to="/rolesPositionTypes"
+          name="rolesPositionTypes"
+          pathname="/rolesPositionTypes"
+          icon={<EmojiPeopleIcon />}
+        />
+        <DrawerItem
+          to="/documentTypes"
+          name="documentTypes"
+          pathname="/documentTypes"
+          icon={<ContentCopyIcon />}
+        />
+        <DrawerItem
+          to="/countries"
+          name="countries"
+          pathname="/countries"
+          icon={<PublicIcon />}
+        />
+        <DrawerItem
+          to="/faculties"
+          name="faculties"
+          pathname="/faculties"
+          icon={<SchoolIcon />}
+        />
+        <DrawerItem
+          to="/universities"
+          name="universities"
+          pathname="/universities"
+          icon={<AssuredWorkloadIcon />}
+        />
+        <DrawerItem
+          to="/degree"
+          name="degree"
+          pathname="/degree"
+          icon={<WorkspacePremiumIcon />}
+        />
+         <DrawerItem
+          to="/areatype"
+          name="areatype"
+          pathname="/areatype"
+          icon={<PersonIcon />}
+        />
+        <DrawerItem
+          to="/languages"
+          name="languages"
+          pathname="/languages"
+          icon={<LanguageIcon />}
+        />
+      </DrawerFolder>
+
       {/* <HasAuth any={[SUPERADMIN, OPERATORI]}>
         <DrawerItem
           to="/example"

@@ -3,7 +3,7 @@ import {
   Dialog,
   DialogContent,
 } from "@mui/material"
-import { LoadingComponent } from "asseco-commons";
+import {LoadingComponent} from "asseco-commons"
 
 export default function LockScreenDialog(props) {
   const { open } = props;

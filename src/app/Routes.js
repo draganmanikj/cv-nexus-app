@@ -15,6 +15,15 @@ import Home from "./HomeComponent";
 import { HistoryRouter as Router } from "redux-first-history/rr6";
 import DashboardContainer from "./domain/dashboard/DashboardContainer";
 import DosieContainer from "./domain/dosie/DosieContainer"
+import WorkingPositionsContainer from "./domain/workingPositionType/WorkingPositionTypesContainer"
+import RolesPositionsComponent from "./domain/rolesPositionType/RolesPositionTypesComponent"
+import DocumentTypesContainer from "./domain/documentType/DocumentTypesContainer"
+import Countries from "./domain/countries/CountriesComponent"
+import Faculties from "./domain/faculties/FacultyComponent"
+import Universities from "./domain/universities/UniversityComponent"
+import DegreeEducation from "./domain/degreeEducation/DegreeEducationComponent"
+import TypeAreaComponent from "./domain/typeArea/TypeAreaComponent"
+import LanguagesComponent from "./domain/languages/LanguagesTypeComponent"
 
 export default function Routes(props) {
   const { history } = props;
@@ -85,6 +94,100 @@ export default function Routes(props) {
           element={
             <AuthorizedRoute
               component={DosieContainer}
+              layout={Layout}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/workingPositionTypes"
+          element={
+            <AuthorizedRoute
+              component={WorkingPositionsContainer}
+              layout={Layout}
+            />
+          }
+        />
+        
+        <Route
+          exact
+          path="/rolesPositionTypes"
+          element={
+            <AuthorizedRoute
+              component={RolesPositionsComponent}
+              layout={Layout}
+            />
+          }
+        />
+        
+        <Route
+          exact
+          path="/documentTypes"
+          element={
+            <AuthorizedRoute
+              component={DocumentTypesContainer}
+              layout={Layout}
+            />
+          }
+        />
+        
+        <Route
+          exact
+          path="/countries"
+          element={
+            <AuthorizedRoute
+              component={Countries}
+              layout={Layout}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/faculties"
+          element={
+            <AuthorizedRoute
+              component={Faculties}
+              layout={Layout}
+            />
+          }
+        />
+        
+        <Route
+          exact
+          path="/universities"
+          element={
+            <AuthorizedRoute
+              component={Universities}
+              layout={Layout}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/degree"
+          element={
+            <AuthorizedRoute
+              component={DegreeEducation}
+              layout={Layout}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/areatype"
+          element={
+            <AuthorizedRoute
+              component={TypeAreaComponent}
+              layout={Layout}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/languages"
+          element={
+            <AuthorizedRoute
+              component={LanguagesComponent}
               layout={Layout}
             />
           }

@@ -10,6 +10,14 @@ import educationReducer from "../app/domain/education/EducationComponent/duck/re
 import trainingsReducer from "../app/domain/education/TrainingsComponent/duck/reducers"
 import projectsReducer from "../app/domain/education/ProjectsComponent/duck/reducers"
 import languagesReducer from "../app/domain/education/LanguageComponent/duck/reducers"
+import workingPositionTypesReducer from "../app/domain/workingPositionType/duck/reducers"
+import rolePositionTypesReducer from "../app/domain/rolesPositionType/duck/reducers"
+import countryReducer from "../app/domain/countries/duck/reducers"
+import facultyReducer from "../app/domain/faculties/duck/reducers"
+import universityReducer from "../app/domain/universities/duck/reducers"
+import degreeEducationReducer from "../app/domain/degreeEducation/duck/reducers"
+import typeAreaReducer from "../app/domain/typeArea/duck/reducers.js"
+import languagesTypesReducer from "../app/domain/languages/duck/reducers.js"
 
 const rootReducer = (routerReducer) => {
   return combineReducers({
@@ -27,6 +35,15 @@ const rootReducer = (routerReducer) => {
     trainings: trainingsReducer,
     projects: projectsReducer,
     languages: languagesReducer,
+    workingPositionTypes: workingPositionTypesReducer,
+    rolesPositions: rolePositionTypesReducer,
+    countryReducer: countryReducer,
+    facultyReducer: facultyReducer,
+    universityReducer : universityReducer,
+    degreeEducationReducer: degreeEducationReducer,
+    typeAreaReducer: typeAreaReducer,
+    languagesTypes: languagesTypesReducer,
+
   });
 };
 

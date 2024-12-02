@@ -37,9 +37,11 @@ export default function DosieWorkInfoComponent(props) {
   const userGroups = useSelector((state) => state.oidc.user?.profile.groups);
   const isAdmin = userGroups.includes("admins");
   const prevDosieIdRef = useRef();
-
+  console.log("dosie", dosie)
+  debugger
   useEffect(() => {
     if (dosie?.id !== prevDosieIdRef.current) {
+      debugger
       dispatch(operations.fetchWorkingPositionsById(dosie.id));
       dispatch(operationsRoles.fetchRolesPositionsById(dosie.id));
     }

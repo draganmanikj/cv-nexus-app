@@ -59,3 +59,17 @@ td {
 body {
   padding-top: 64px;
 }
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 2px #00a3e0, 0 0 5px #00a3e0, 0 0 8px #00a3e0;
+  }
+  50% {
+    box-shadow: 0 0 5px #00a3e0, 0 0 8px #00a3e0, 0 0 10px #00a3e0;
+  }
+  100% {
+    box-shadow: 0 0 2px #00a3e0, 0 0 5px #00a3e0, 0 0 8px #00a3e0;
+  }
+}
+
+

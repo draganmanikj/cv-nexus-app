@@ -1,5 +1,5 @@
 // import React, { useState, useEffect } from "react";
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { translate } from "../../../../../util/lang/translate-wrapper";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -28,6 +28,15 @@ export default function RolesPositionsComponent(props) {
   const { rolesPositions } = useSelector((state) => state.dosie);
   const [status, setStatus] = useState();
 
+  useEffect(() => {
+    if (props.dosie)
+      dispatch(operations.fetchRolesPositionsById(props.dosie.id));
+    else {
+      !rolesPositions &&
+        props.dosie?.id &&
+        dispatch(operations.fetchRolesPositionsById(props.dosie.id));
+    }
+  }, [props.dosie]);
 
   function openDialog(dialog, row) {
     if (dialog === "add") {

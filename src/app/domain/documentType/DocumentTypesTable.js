@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Paper from "@mui/material/Paper";
 import { TableCell, Select, TextField } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers";
-import "../../domain/syncUsers/SyncUsersTable.css";
 import { withStyles } from "@mui/styles";
 import {
   Grid,

@@ -18,7 +18,7 @@
     "@nivo/marimekko": "^0.83.0",
     "@nivo/pie": "^0.83.0",
     "@reduxjs/toolkit": "^1.9.1",
-    "asseco-commons": "^2.2.1",
+    "asseco-commons": "^2.2.2",
     "axios": "^1.2.2",
     "chart.js": "^4.3.0",
     "chartjs-plugin-datalabels": "^2.2.0",

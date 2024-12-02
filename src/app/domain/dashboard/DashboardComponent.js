@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Card, CardContent, CardHeader, Typography } from "@mui/material";
 import { isAuthorized } from "asseco-commons";
 import { translate } from "../../util/lang/translate-wrapper";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +11,7 @@ import {
 } from "../../util/userRoleConstants";
 import Logo from "../../util/images/logo.png"
 import { useTheme } from "@emotion/react";
+import "../../App.css"
 
 export default function DashboardComponent({
 }) {
@@ -45,7 +46,7 @@ export default function DashboardComponent({
       background: theme.palette.mode === "light" 
         ? `linear-gradient(0deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)), url(${Logo})`
         : `linear-gradient(0deg, rgba(18, 18, 18, 0.60), rgba(18, 18, 18, 0.60)), url(${Logo})`,
-      minHeight: "90vh",
+      minHeight: "65vh",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain", 
@@ -118,9 +119,66 @@ export default function DashboardComponent({
   const classes = useStyles();
 
   return (
-    <Box sx={classes.boxImgBg}>
-      <Grid container sx={classes.root}>
-      </Grid>
-    </Box>
+    <>
+      <Card
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "0 auto",
+          maxWidth: "850px",
+          borderRadius: "10px",
+          border: "2px solid #00a3e0",
+          width: "100%",
+          textAlign: "center",
+          backgroundColor: "#DCDCDC",
+          boxShadow: "0 0 2px #00a3e0, 0 0 5px #00a3e0, 0 0 10px #00a3e0",
+          animation: "glow 1.5s infinite ease-in-out",
+          marginBottom: "2rem",
+        }}
+      >
+        <CardHeader
+          style={{}}
+          title={
+            <Grid
+              container
+              justifyContent="space-between"
+            >
+              <Grid
+                item
+                xs={12}
+              >
+                <Typography
+                  variant="h6"
+                  style={{ textAlign: "center", fontWeight: "bold" }}
+                >
+                  {translate("app.dashboard.welcome")}
+                </Typography>
+              </Grid>
+            </Grid>
+          }
+        />
+        <CardContent
+          style={{
+            padding: "20px",
+          }}
+        >
+          <Typography
+            variant="body1"
+            style={{ lineHeight: "1.6", fontSize: "16px" }}
+          >
+            {translate("app.dashboard.welcomeText")}
+          </Typography>
+        </CardContent>
+      </Card>
+
+      <Box sx={classes.boxImgBg}>
+        <Grid
+          container
+          sx={classes.root}
+        ></Grid>
+      </Box>
+    </>
   );
 }
