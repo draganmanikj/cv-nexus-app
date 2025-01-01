@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Route, Routes as RouterRoutes } from "react-router-dom";
 import {AuthorizedRoute} from "asseco-commons";
 import { LoginPage } from "asseco-commons";
@@ -28,6 +29,10 @@ import OutputDocument from "./domain/output_documents_printing/OutputDocumentsPr
 
 export default function Routes(props) {
   const { history } = props;
+  const userGroups = useSelector((state) => state.oidc.user?.profile.groups);
+  const adminGroup = "admins";
+  const isAdmin = userGroups?.includes(adminGroup);
+
   return (
     <Router
       history={history}
@@ -99,6 +104,7 @@ export default function Routes(props) {
             />
           }
         />
+        {isAdmin &&
         <Route
           exact
           path="/korisnici"
@@ -109,6 +115,9 @@ export default function Routes(props) {
             />
           }
         />
+        }
+        {isAdmin && 
+        <>
         <Route
           exact
           path="/workingPositionTypes"
@@ -213,6 +222,8 @@ export default function Routes(props) {
             />
           }
         />
+        </>
+        }
         <Route
           exact
           path="/outer/outerSingle"

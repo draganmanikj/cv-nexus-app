@@ -89,6 +89,7 @@ const classes = useStyles();
           initialValues={initialValues}
           enableReinitialize={true}
           onSubmit={(values, actions) => {
+            
             fetchDocuments(values);
           }}
           render={(formikProps) => (

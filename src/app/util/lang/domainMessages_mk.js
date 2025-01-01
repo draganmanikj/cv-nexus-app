@@ -95,6 +95,7 @@
         delete: "Избриши",
         restore: "Врати",
         loading: "Вчитување...",
+        filter:"Filter...",
         cancel: "Откажи",
         save: "Зачувај",
         noItems: "Нема податоци во листата.",

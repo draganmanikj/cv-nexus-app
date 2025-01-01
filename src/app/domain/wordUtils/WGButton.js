@@ -3,13 +3,16 @@ import {Field, Form, Formik} from "formik";
 import {translate} from "../../util/lang/translate-wrapper"
 import {FAutocomplete, LoadingComponent} from "asseco-commons";
 import {properties} from "../../config/properties";
-import {Box, Dialog, DialogActions, DialogTitle, FormControl, Grid, Slide} from "@mui/material";
+import {Box, Dialog, DialogActions, DialogTitle, FormControl, Grid, Slide, Typography} from "@mui/material";
 import Button from "@mui/material/Button";
 import PropTypes from "prop-types";
 import {useDispatch, useSelector} from "react-redux";
 import operations from "./duck/operations";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import PlayfullCV from "../../util/images/playfull.png"
+import AtsCv from "../../util/images/ats.png"
+import BoldCV from "../../util/images/bold.png"
 
 const WGButton = (props) => {
     const templateType = props.templateType;
@@ -36,7 +39,7 @@ const WGButton = (props) => {
             </Button>
         <Dialog
             open={openWGDialog}
-            maxWidth={"sm"}
+            maxWidth={"md"}
             fullWidth={true}
         >
             <DialogTitle id="id">
@@ -72,7 +75,31 @@ const WGButton = (props) => {
                 }}>
                     {(formikProps) => (
                         <Form autoComplete="off" noValidate="novalidate">
-                            <Grid container spacing={12} xs={12}>
+                            <Grid container spacing={2}>
+                                <Grid container sx={{marginLeft:"5rem", marginTop:"1rem" }}>
+                                    <Grid item xs={4} sx={{color:"#0071e3"}}>
+                                       <Typography variant='body2' sx={{display:"flex", justifyContent:"center", fontWeight:"bold"}}>Bold attorney resume</Typography>
+                                    </Grid>
+                                    <Grid item xs={4} sx={{color:"#0071e3"}}>
+                                       <Typography variant='body2' sx={{display:"flex", justifyContent:"center", fontWeight:"bold"}}>Playful bussiness resume</Typography>
+                                    </Grid>
+                                    <Grid item xs={4} sx={{color:"#0071e3"}}>
+                                       <Typography variant='body2' sx={{display:"flex", justifyContent:"center", fontWeight:"bold"}}>ATS Classic resume</Typography>
+                                    </Grid>
+                                </Grid>
+                                <Grid container sx={{marginLeft:"5rem", marginTop:"1rem",marginBottom:"1rem" }}>
+                                    <Grid item xs={3} sx={{border:"1px solid black", borderRadius:"5px"}}>
+                                      <img src={BoldCV} alt='playful' width="200px" height="280px" />
+                                    </Grid>
+                                    <Grid item xs={1}></Grid>
+                                    <Grid item xs={3} sx={{border:"1px solid black", borderRadius:"5px"}}>
+                                      <img src={PlayfullCV} alt='playful' width="200px"height="280px" />
+                                    </Grid>
+                                    <Grid item xs={1}></Grid>
+                                    <Grid item xs={3} sx={{border:"1px solid black", borderRadius:"5px"}}>
+                                      <img src={AtsCv} alt='playful' width="200px" height="280px"/>
+                                    </Grid>
+                                </Grid>
                                 <Grid item xs={10}>
                                     <Field
                                         required

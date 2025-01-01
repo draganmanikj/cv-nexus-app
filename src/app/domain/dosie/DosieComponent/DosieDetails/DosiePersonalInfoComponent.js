@@ -3,6 +3,7 @@ import { Field, Form, Formik } from "formik";
 import {
   Button,
   Grid,
+  Typography
 } from "@mui/material";
 import { translate } from "../../../../util/lang/translate-wrapper";
 import { FTextField, FDatePicker, FAutocomplete } from "asseco-commons";
@@ -49,6 +50,21 @@ const useStyles = makeStyles ((theme) => ({
       zIndex: "1111 !important",
     },
   },
+  fDatePickerStyles:{
+    "& .css-1wqufre-MuiInputBase-root-MuiOutlinedInput-root":{
+      width: "37vw",
+      display: "flex",
+      justifyContent: "center",
+      alignItems:"center",
+      "@media (max-width: 768px)": {
+      width: "37vw", 
+    },
+
+    "@media (max-width: 480px)": {
+      width: "37vw", // Full width for very small screens
+    }
+    }
+  }
 }));
 
 export default function DosiePersonalInfoComponent(props) {
@@ -231,7 +247,7 @@ export default function DosiePersonalInfoComponent(props) {
                   margin="none"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={6} className={classes.fDatePickerStyles}>
                 <div >
                   <Field
                     name="dateBirth"
@@ -306,6 +322,30 @@ export default function DosiePersonalInfoComponent(props) {
                   margin="none"
                   disabled={ isAdmin ? false : true }
                 />
+              </Grid>
+              <Grid item xs={12} sx={{marginBottom:"4rem"}}>
+              <Typography color="textSecondary" variant="body2">{`${translate("app.dosie.dosieWorkInfoForm.organizationalSkills")} :`}</Typography>
+              </Grid>
+              <Grid item xs={12} sx={{marginTop:"1rem"}}>
+                        <Field
+                          name="organizationalSkills"
+                          component={FTextField}
+                          variant="outlined"
+                          rows={5}
+                          multiline
+                        />
+              </Grid>
+              <Grid item xs={12} sx={{marginBottom:"4rem"}}>
+              <Typography color="textSecondary" variant="body2">{`${translate("app.dosie.dosieWorkInfoForm.technicalSkills")} :`}</Typography>
+              </Grid>
+              <Grid item xs={12} sx={{marginTop:"1rem"}}>
+                        <Field
+                          name="technicalSkills"
+                          component={FTextField}
+                          variant="outlined"
+                          rows={5}
+                          multiline
+                        />
               </Grid>
             </Grid>
           </Form>

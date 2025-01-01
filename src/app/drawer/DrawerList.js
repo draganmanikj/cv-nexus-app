@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { HasAuth } from "asseco-commons";
 import { useLocation } from "react-router-dom";
 import { List, useTheme } from "@mui/material";
@@ -69,7 +70,9 @@ export default function DrawerTreeList() {
   const classes = customStyles(theme);
   const location = useLocation();
   const [pathName, setPathName] = useState("");
-
+  const userGroups = useSelector((state) => state.oidc.user?.profile.groups);
+  const adminGroup = "admins";
+  const isAdmin = userGroups?.includes(adminGroup);
   useEffect(() => {
     setPathName(location.pathname);
   }, [location]);
@@ -88,12 +91,15 @@ export default function DrawerTreeList() {
         pathname="/moedosie"
         icon={<AssignmentIndIcon />}
       />
+      {isAdmin &&
       <DrawerItem
         to="/korisnici"
         name="korisnici"
         pathname="/korisnici"
         icon={<PeopleAltIcon />}
       />
+      }
+      {isAdmin && 
       <DrawerFolder name="configuration" icon={<AdminPanelSettingsIcon />} >
         <DrawerItem
           to="/workingPositionTypes"
@@ -156,7 +162,7 @@ export default function DrawerTreeList() {
           icon={<PrintIcon />}
         />
       </DrawerFolder>
-
+      }
       {/* <HasAuth any={[SUPERADMIN, OPERATORI]}>
         <DrawerItem
           to="/example"
