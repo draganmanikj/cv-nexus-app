@@ -113,24 +113,35 @@ export default function DosiePersonalInfoComponent(props) {
   }, [props.isAddDosie, dosiePersonal])
 
   return (
-    <div >
+    <div>
       {/*Лични податоци: Име, Презиме, ЕМБГ, Телефон*/}
 
       <Formik
         initialValues={initialValues}
         enableReinitialize
         validationSchema={validationSchema}
-        onSubmit={(values) => setOpenAlertDialog({ ...values, 
-          status: values.status.value,
-          gender: values.gender.value,
-          ...(values.drivingLicence) && {drivingLicence: values.drivingLicence.value},
-          ...(values.isMarried) && {isMarried: values.isMarried.value}
-        })}
+        onSubmit={(values) =>
+          setOpenAlertDialog({
+            ...values,
+            status: values.status.value,
+            gender: values.gender.value,
+            ...(values.drivingLicence && {
+              drivingLicence: values.drivingLicence.value,
+            }),
+            ...(values.isMarried && { isMarried: values.isMarried.value }),
+          })
+        }
       >
         {(formikProps) => (
-          <Form id={"dosiePersonalInfoEditForm"} autoComplete="off">
+          <Form
+            id={"dosiePersonalInfoEditForm"}
+            autoComplete="off"
+          >
             {console.log("formikProps", formikProps)}
-            <Grid container justifyContent="flex-end">
+            <Grid
+              container
+              justifyContent="flex-end"
+            >
               <Button
                 style={{ marginRight: "5px" }}
                 color="primary"
@@ -148,29 +159,46 @@ export default function DosiePersonalInfoComponent(props) {
               </Button>
             </Grid>
 
-            <Grid container spacing={2} justifyContent="center" alignContent="flex-start" >
-                <Grid item xs={6} className={!isAdmin && classes.inputDisabled}>
-                  <Field
+            <Grid
+              container
+              spacing={2}
+              justifyContent="center"
+              alignContent="flex-start"
+            >
+              <Grid
+                item
+                xs={6}
+              >
+                <Field
                   name="user.firstName"
                   label={`${translate("app.users.table.firstName")} *`}
                   component={FTextField}
                   margin="none"
-                  disabled={ isAdmin ? false : true }
                 />
-                </Grid>
-                <Grid item xs={6} className={!isAdmin && classes.inputDisabled}>
-                  <Field
+              </Grid>
+              <Grid
+                item
+                xs={6}
+              >
+                <Field
                   name="user.lastName"
                   label={`${translate("app.users.table.lastName")} *`}
                   component={FTextField}
                   margin="none"
-                  disabled={ isAdmin ? false : true }
                 />
-                </Grid>
-              <Grid item xs={6} className={ (!isAdmin && classes.inputDisabled)}>
+              </Grid>
+              <Grid
+                item
+                xs={6}
+                className={!isAdmin && classes.inputDisabled}
+              >
                 <Field
                   name="user"
-                  label={formikProps.values?.user ? `${translate("app.users.table.name")} *` : ""}
+                  label={
+                    formikProps.values?.user
+                      ? `${translate("app.users.table.name")} *`
+                      : ""
+                  }
                   placeholder={`${translate("app.users.table.name")} *`}
                   component={FAutocomplete}
                   getOptionValue={(option) => option.id}
@@ -180,22 +208,30 @@ export default function DosiePersonalInfoComponent(props) {
                     method: "get",
                   }}
                   margin="none"
-                  disabled={ isAdmin ? false : true }
                 />
               </Grid>
-              <Grid item xs={6} className={!isAdmin && classes.inputDisabled}>
-                  <Field
+              <Grid
+                item
+                xs={6}
+              >
+                <Field
                   name="user.email"
                   label={`${translate("app.users.table.email")} *`}
                   component={FTextField}
                   margin="none"
-                  disabled={ isAdmin ? false : true }
                 />
-                </Grid>
-              <Grid item xs={6} className={!isAdmin && classes.inputDisabled}>
+              </Grid>
+              {/* <Grid
+                item
+                xs={6}
+              >
                 <Field
                   name="applicationRole"
-                  label={formikProps.values?.applicationRole ? translate("app.roles.form.roleName") : ""}
+                  label={
+                    formikProps.values?.applicationRole
+                      ? translate("app.roles.form.roleName")
+                      : ""
+                  }
                   placeholder={translate("app.roles.form.roleName")}
                   component={FAutocomplete}
                   getOptionLabel={(option) => option.name}
@@ -206,79 +242,119 @@ export default function DosiePersonalInfoComponent(props) {
                     minChar: 1,
                   }}
                   margin="none"
-                  disabled={ isAdmin ? false : true }
                 />
-              </Grid>
-              <Grid item xs={6} className={!isAdmin && classes.inputDisabled}>
-                  <Field
+              </Grid> */}
+              <Grid
+                item
+                xs={6}
+              >
+                <Field
                   name="applicationRole.application.name"
                   label={`${translate("app.users.table.company")} *`}
                   component={FTextField}
                   margin="none"
-                  disabled={ isAdmin ? false : true }
                 />
-                </Grid>
-                <Grid item xs={6}>
+              </Grid>
+              <Grid
+                item
+                xs={6}
+              >
                 <Field
                   name="address"
-                  label={`${translate("app.dosie.dosiePersonalInfoForm.address")}`}
+                  label={`${translate(
+                    "app.dosie.dosiePersonalInfoForm.address"
+                  )}`}
                   component={FTextField}
                   margin="none"
                 />
               </Grid>
-              <Grid item xs={6} >
+              <Grid
+                item
+                xs={6}
+              >
                 <Field
                   name="phoneNumber"
-                  label={`${translate("app.dosie.dosiePersonalInfoForm.phoneNumber")} *`}
+                  label={`${translate(
+                    "app.dosie.dosiePersonalInfoForm.phoneNumber"
+                  )} *`}
                   component={FTextField}
                   margin="none"
                   // required
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid
+                item
+                xs={6}
+              >
                 <Field
                   name="isMarried"
-                  placeholder={translate("app.dosie.dosiePersonalInfoForm.isMarried")}
-                  label={formikProps.values?.isMarried ? translate("app.dosie.dosiePersonalInfoForm.isMarried") : ""}
+                  placeholder={translate(
+                    "app.dosie.dosiePersonalInfoForm.isMarried"
+                  )}
+                  label={
+                    formikProps.values?.isMarried
+                      ? translate("app.dosie.dosiePersonalInfoForm.isMarried")
+                      : ""
+                  }
                   component={FAutocomplete}
                   options={maritalStatusEnum}
-                  getOptionValue={option => option.value}
-                  getOptionLabel={option => option.label}
+                  getOptionValue={(option) => option.value}
+                  getOptionLabel={(option) => option.label}
                   margin="none"
                 />
               </Grid>
-              <Grid item xs={6} className={classes.fDatePickerStyles}>
-                <div >
+              <Grid
+                item
+                xs={6}
+                className={classes.fDatePickerStyles}
+              >
+                <div>
                   <Field
                     name="dateBirth"
-                    label={translate("app.dosie.dosiePersonalInfoForm.dateBirth")}
+                    label={translate(
+                      "app.dosie.dosiePersonalInfoForm.dateBirth"
+                    )}
                     component={FDatePicker}
                     format={"DD.MM.YYYY"}
                     renderInputVariant="outlined"
                   />
                 </div>
               </Grid>
-              <Grid item xs={6}>
+              <Grid
+                item
+                xs={6}
+              >
                 <Field
                   name="cbReligion"
-                  label={formikProps.values?.cbReligion ? translate("app.dosie.cbReligion") : ""}
+                  label={
+                    formikProps.values?.cbReligion
+                      ? translate("app.dosie.cbReligion")
+                      : ""
+                  }
                   placeholder={translate("app.dosie.cbReligion")}
                   getOptionLabel={(option) => option.naziv}
                   getOptionValue={(option) => option.id}
                   component={FAutocomplete}
                   loadOnNoOption={true}
                   async={{
-                      url: `${properties.api.root}/religion/searchByNaziv`,
-                      method: "get",
-                      minChar: 1,
+                    url: `${properties.api.root}/religion/searchByNaziv`,
+                    method: "get",
+                    minChar: 1,
                   }}
                   margin="none"
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid
+                item
+                xs={6}
+              >
                 <Field
                   name="cbNarodnosti"
-                  label={formikProps.values?.cbNarodnosti ? translate("app.dosie.cbNationality") : ""}
+                  label={
+                    formikProps.values?.cbNarodnosti
+                      ? translate("app.dosie.cbNationality")
+                      : ""
+                  }
                   placeholder={translate("app.dosie.cbNationality")}
                   getOptionLabel={(option) => option.naziv}
                   getOptionValue={(option) => option.id}
@@ -292,60 +368,106 @@ export default function DosiePersonalInfoComponent(props) {
                   margin="none"
                 />
               </Grid>
-              <Grid item xs={6}>
-                  <Field
-                      name="drivingLicence"
-                      placeholder={`${translate("app.dosie.drivingLicence")}`}
-                      label={formikProps.values?.drivingLicence ? `${translate("app.dosie.drivingLicence")}` : ""}
-                      component={FAutocomplete}
-                      options={licenseOptionsReversed}
-                      margin="none"
-                  />
+              <Grid
+                item
+                xs={6}
+              >
+                <Field
+                  name="drivingLicence"
+                  placeholder={`${translate("app.dosie.drivingLicence")}`}
+                  label={
+                    formikProps.values?.drivingLicence
+                      ? `${translate("app.dosie.drivingLicence")}`
+                      : ""
+                  }
+                  component={FAutocomplete}
+                  options={licenseOptionsReversed}
+                  margin="none"
+                />
               </Grid>
-              <Grid item xs={6}>
+              <Grid
+                item
+                xs={6}
+              >
                 <Field
                   name="gender"
                   placeholder={`${translate("app.dosie.gender")} *`}
-                  label={formikProps.values?.gender ? `${translate("app.dosie.gender")} *` : ""}
+                  label={
+                    formikProps.values?.gender
+                      ? `${translate("app.dosie.gender")} *`
+                      : ""
+                  }
                   component={FAutocomplete}
                   options={genderOptions}
                   margin="none"
                 />
               </Grid>
-              <Grid item xs={12} className={!isAdmin && classes.inputDisabled}>
+              <Grid
+                item
+                xs={6}
+              >
                 <Field
                   name="status"
                   placeholder={`${translate("app.dosie.status")} *`}
-                  label={formikProps.values?.status ? `${translate("app.dosie.status")} *` : ""}
+                  label={
+                    formikProps.values?.status
+                      ? `${translate("app.dosie.status")} *`
+                      : ""
+                  }
                   component={FAutocomplete}
                   options={statusOptions}
                   margin="none"
-                  disabled={ isAdmin ? false : true }
                 />
               </Grid>
-              <Grid item xs={12} sx={{marginBottom:"4rem"}}>
-              <Typography color="textSecondary" variant="body2">{`${translate("app.dosie.dosieWorkInfoForm.organizationalSkills")} :`}</Typography>
+              <Grid
+                item
+                xs={12}
+                sx={{ marginBottom: "4rem" }}
+              >
+                <Typography
+                  color="textSecondary"
+                  variant="body2"
+                >{`${translate(
+                  "app.dosie.dosieWorkInfoForm.organizationalSkills"
+                )} :`}</Typography>
               </Grid>
-              <Grid item xs={12} sx={{marginTop:"1rem"}}>
-                        <Field
-                          name="organizationalSkills"
-                          component={FTextField}
-                          variant="outlined"
-                          rows={5}
-                          multiline
-                        />
+              <Grid
+                item
+                xs={12}
+                sx={{ marginTop: "1rem" }}
+              >
+                <Field
+                  name="organizationalSkills"
+                  component={FTextField}
+                  variant="outlined"
+                  rows={5}
+                  multiline
+                />
               </Grid>
-              <Grid item xs={12} sx={{marginBottom:"4rem"}}>
-              <Typography color="textSecondary" variant="body2">{`${translate("app.dosie.dosieWorkInfoForm.technicalSkills")} :`}</Typography>
+              <Grid
+                item
+                xs={12}
+                sx={{ marginBottom: "4rem" }}
+              >
+                <Typography
+                  color="textSecondary"
+                  variant="body2"
+                >{`${translate(
+                  "app.dosie.dosieWorkInfoForm.technicalSkills"
+                )} :`}</Typography>
               </Grid>
-              <Grid item xs={12} sx={{marginTop:"1rem"}}>
-                        <Field
-                          name="technicalSkills"
-                          component={FTextField}
-                          variant="outlined"
-                          rows={5}
-                          multiline
-                        />
+              <Grid
+                item
+                xs={12}
+                sx={{ marginTop: "1rem" }}
+              >
+                <Field
+                  name="technicalSkills"
+                  component={FTextField}
+                  variant="outlined"
+                  rows={5}
+                  multiline
+                />
               </Grid>
             </Grid>
           </Form>
@@ -359,7 +481,10 @@ export default function DosiePersonalInfoComponent(props) {
           item={openAlertDialog}
           onClose={() => setOpenAlertDialog(false)}
           onCloseYes={() => setOpenAlertDialog(false)}
-          onFunction={(values) => {props.save(values); props.setIsAddDosie(false)}}
+          onFunction={(values) => {
+            props.save(values);
+            props.setIsAddDosie(false);
+          }}
           text={translate("app.notifications.saveConfirm")}
         />
       )}

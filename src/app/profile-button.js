@@ -90,14 +90,8 @@ function ProfileButton(props) {
         >
           <MenuItem onClick={handleOpenProfilePage}>
             <PersonIcon sx={classes.menuButton} />
-            {translate("app.profile.label")}
+            {translate("app.profile")}
           </MenuItem>
-          <HasAuth any={["KORISNICI"]}>
-            <MenuItem onClick={handleOpenPasswordChangePage}>
-              <KeyIcon sx={classes.menuButton} />
-              {translate("app.changePassword")}
-            </MenuItem>
-          </HasAuth>
           <MenuItem onClick={handleOpenDocsPage}>
             <AssignmentIcon sx={classes.menuButton} />
             {translate("app.docs")}

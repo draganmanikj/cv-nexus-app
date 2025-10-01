@@ -96,7 +96,9 @@ const AppbarContents = props => {
         </Typography>
   
         <Typography align="right">{props.fullName}</Typography>
-        <ProfileButton />
+        {props?.fullName &&
+         <ProfileButton />
+        }
         <Box sx={classes.buttonWrapper}>       
           <NotificationButton />
         </Box>
